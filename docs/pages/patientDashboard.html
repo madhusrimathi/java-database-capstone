@@ -1,63 +1,44 @@
-<!-- patientDashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/logo.png" />
-    <title>PatientDashboard</title>
-    <link rel="stylesheet" href="../assets/css/adminDashboard.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/patientDashboard.css">
-    <script src="../js/render.js" defer></script>
-    <script src="../js/util.js" defer></script>
-    <script src="../js/components/header.js" defer></script>
-    <script src="../js/components/footer.js" defer></script>
-    <script type="module" src="../js/components/modals.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Portal - Smart Clinic</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#1f2937}
+header{background:#2563eb;color:#fff;padding:22px 40px;font-size:22px;font-weight:bold}
+main{max-width:1000px;margin:45px auto;padding:0 24px}
+.panel{background:#fff;padding:30px;border-radius:14px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.search{display:flex;gap:12px;margin:22px 0}
+input{flex:1;padding:13px;border:1px solid #d1d5db;border-radius:8px;font-size:16px}
+button{background:#2563eb;color:#fff;border:0;border-radius:8px;padding:13px 22px;font-size:16px}
+.result{margin-top:25px;border:1px solid #e5e7eb;border-radius:12px;padding:22px;background:#f9fafb}
+.result h3{margin:0 0 8px}
+.tag{display:inline-block;background:#dbeafe;color:#1e40af;padding:6px 10px;border-radius:16px;font-size:14px}
+</style>
 </head>
+<body>
+<header>Smart Clinic Management System — Patient Portal</header>
+<main>
+<div class="panel">
+<h1>Find a Doctor</h1>
+<p>Search for a doctor by name.</p>
 
-<body onload="renderContent()">
-    <div class="container">
-        <div class="wrapper">
-            <div id="header"></div>
-            <main class="main-content">
-                <input type="text" id="searchBar" class="searchBar" placeholder="Search Bar for custom output" />
-                <div class="filter-wrapper">
-                    <select class="filter-select" id="filterTime">
-                        <option value="">Sort by Time</option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                    </select>
-                    <select class="filter-select" id="filterSpecialty">
-                        <option value="">Filter by Specialty</option>
-                        <option value="Cardiologist">Cardiologist</option>
-                        <option value="Dermatologist">Dermatologist</option>
-                        <option value="Neurologist">Neurologist</option>
-                        <option value="Pediatrician">Pediatrician</option>
-                        <option value="Orthopedic">Orthopedic</option>
-                        <option value="Gynecologist">Gynecologist</option>
-                        <option value="Psychiatrist">Psychiatrist</option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Ophthalmologist">Ophthalmologist</option>
-                        <option value="Ent">ENT Specialist</option>
-                        <option value="Urologist">Urologist</option>
-                        <option value="Oncologist">Oncologist</option>
-                        <option value="Gastroenterologist">Gastroenterologist</option>
-                        <option value="General">General Physician</option>
-                    </select>
-                </div>
-                <div id="content"></div>
-            </main>
-            <div id="footer"></div>
-        </div>
-    </div>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-    <script type="module" src="../js/patientDashboard.js" defer></script>
+<div class="search">
+<input value="Dr Sarah Lim">
+<button>Search</button>
+</div>
+
+<h2>Search Results</h2>
+<div class="result">
+<h3>Dr Sarah Lim</h3>
+<span class="tag">Cardiology</span>
+<p><strong>Email:</strong> sarah@clinic.com</p>
+<p><strong>Available:</strong> 9:00 AM – 12:00 PM</p>
+<button>View Availability</button>
+</div>
+</div>
+</main>
 </body>
-
 </html>
